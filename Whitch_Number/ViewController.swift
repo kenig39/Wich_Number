@@ -9,6 +9,11 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
+    var number: Int = 0
+    
+    var round: Int = 0
+    
+    var points: Int = 0
     
     let insertNumber: UITextField = {
         let textField = UITextField()
@@ -30,7 +35,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     let resultLabel: UILabel = {
         let label = UILabel()
-        label.text = "Text"
         label.font = UIFont(name: "Text", size: 20)
         label.textColor = UIColor.black
         label.frame = CGRect(x: 0, y: 0, width: 60, height: 30)
@@ -47,6 +51,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     @objc func checkNumbers() {
+        if self.round == 0 {
+            self.number = Int.random(in: 1...50)
+            self.resultLabel.text = String(self.number)
+            self.round = 1
+        }
+        else {
+            let numberTextField = Int(self.insertNumber.text ?? "")
+            if numberTextField > self.number {
+                
+            }
+            
+        }
         
     }
     

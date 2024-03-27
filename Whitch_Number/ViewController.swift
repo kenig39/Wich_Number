@@ -61,6 +61,16 @@ class ViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    let roundCount: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Text", size: 20)
+        label.text = "Раунд: "
+        label.textColor = UIColor.black
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
 
 
     override func viewDidLoad() {
@@ -92,7 +102,6 @@ class ViewController: UIViewController {
         guard let numberTextField = Int(self.insertNumber.text ?? "") else {
             return
         }
-        
         
         if numberTextField == exersice(num1: number1, num2: number2) {
             
@@ -135,8 +144,8 @@ class ViewController: UIViewController {
     func setting() {
         
         view.addSubview(exerciseLabel)
-        exerciseLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        exerciseLabel.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        exerciseLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100).isActive = true
+        exerciseLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
         exerciseLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
         exerciseLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
@@ -146,7 +155,7 @@ class ViewController: UIViewController {
         
         view.addSubview(resultNameLabel)
         resultNameLabel.topAnchor.constraint(equalTo: exerciseLabel.bottomAnchor, constant: 15).isActive = true
-        resultNameLabel.rightAnchor.constraint(equalTo: view.leftAnchor, constant: 90 ).isActive = true
+        resultNameLabel.rightAnchor.constraint(equalTo: view.leftAnchor, constant: 110 ).isActive = true
         
         view.addSubview(checkButton)
         checkButton.topAnchor.constraint(equalTo: insertNumber.bottomAnchor, constant: 20).isActive = true
@@ -155,13 +164,14 @@ class ViewController: UIViewController {
         checkButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
        
-       
-        
-        
         view.addSubview(roundLabel)
         roundLabel.topAnchor.constraint(equalTo: checkButton.bottomAnchor, constant: 20).isActive = true
         roundLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
+        
+        view.addSubview(roundCount)
+        roundCount.topAnchor.constraint(equalTo: checkButton.bottomAnchor, constant: 20).isActive = true
+        roundCount.rightAnchor.constraint(equalTo: view.leftAnchor, constant: 100).isActive = true
     }
 
 }

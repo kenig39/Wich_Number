@@ -26,6 +26,17 @@ class ViewController: UIViewController {
        return textField
     }()
     
+    let nextViewButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Next View", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .cyan
+        button.layer.cornerRadius = 5
+        button.layer.borderWidth = 2
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     let checkButton: UIButton = {
         let button = UIButton()
         button.setTitle("Check", for: .normal)
@@ -78,6 +89,8 @@ class ViewController: UIViewController {
         
         checkButton.addTarget(self, action: #selector(checkNumbers), for: .touchUpInside)
         
+        nextViewButton.addTarget(self, action: #selector(nextView), for: .touchUpInside)
+        
         setting()
         
         number1 = Int.random(in: 1...50)
@@ -93,8 +106,10 @@ class ViewController: UIViewController {
       return result
     }
     
+    @objc func nextView() {
+        
+    }
     
-  
    
     @objc func checkNumbers() {
         

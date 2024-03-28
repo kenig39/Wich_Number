@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA61C7F92BB5FAB400404806 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61C7F82BB5FAB400404806 /* SecondViewController.swift */; };
 		FAAB58102BB0B8C2001C79D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB580F2BB0B8C2001C79D0 /* AppDelegate.swift */; };
 		FAAB58122BB0B8C2001C79D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB58112BB0B8C2001C79D0 /* SceneDelegate.swift */; };
 		FAAB58142BB0B8C2001C79D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB58132BB0B8C2001C79D0 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA61C7F82BB5FAB400404806 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		FAAB580C2BB0B8C2001C79D0 /* Whitch_Number.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whitch_Number.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAB580F2BB0B8C2001C79D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAAB58112BB0B8C2001C79D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +42,7 @@
 		FAAB58032BB0B8C2001C79D0 = {
 			isa = PBXGroup;
 			children = (
+				FA61C7F82BB5FAB400404806 /* SecondViewController.swift */,
 				FAAB580E2BB0B8C2001C79D0 /* Whitch_Number */,
 				FAAB580D2BB0B8C2001C79D0 /* Products */,
 			);
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA61C7F92BB5FAB400404806 /* SecondViewController.swift in Sources */,
 				FAAB58142BB0B8C2001C79D0 /* ViewController.swift in Sources */,
 				FAAB58102BB0B8C2001C79D0 /* AppDelegate.swift in Sources */,
 				FAAB58122BB0B8C2001C79D0 /* SceneDelegate.swift in Sources */,

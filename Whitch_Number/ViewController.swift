@@ -120,6 +120,8 @@ class ViewController: UIViewController {
     
     @objc func nextView() {
         let vc = SecondViewController()
+        vc.title = "Next view"
+        vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
     

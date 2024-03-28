@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     
     let nextViewButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Next View", for: .normal)
+        button.setTitle("NextVC", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .cyan
         button.layer.cornerRadius = 5
@@ -55,6 +55,18 @@ class ViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    
+    let exerciseNameLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Text", size: 20)
+        label.text = "Пример: "
+        label.textColor = UIColor.black
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    
     
     let resultNameLabel: UILabel = {
         let label = UILabel()
@@ -107,7 +119,8 @@ class ViewController: UIViewController {
     }
     
     @objc func nextView() {
-        
+        let vc = SecondViewController()
+        present(vc, animated: true)
     }
     
    
@@ -160,9 +173,15 @@ class ViewController: UIViewController {
         
         view.addSubview(exerciseLabel)
         exerciseLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100).isActive = true
-        exerciseLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        exerciseLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        exerciseLabel.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        exerciseLabel.widthAnchor.constraint(equalToConstant: 80).isActive = true
         exerciseLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        view.addSubview(exerciseNameLabel)
+        exerciseNameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100).isActive = true
+        exerciseNameLabel.rightAnchor.constraint(equalTo: view.leftAnchor, constant: 110 ).isActive = true
+        
+        
         
         view.addSubview(insertNumber)
         insertNumber.topAnchor.constraint(equalTo: exerciseLabel.bottomAnchor, constant: 15).isActive = true
@@ -173,10 +192,17 @@ class ViewController: UIViewController {
         resultNameLabel.rightAnchor.constraint(equalTo: view.leftAnchor, constant: 110 ).isActive = true
         
         view.addSubview(checkButton)
-        checkButton.topAnchor.constraint(equalTo: insertNumber.bottomAnchor, constant: 20).isActive = true
-        checkButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        checkButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        checkButton.topAnchor.constraint(equalTo: insertNumber.bottomAnchor, constant: 15).isActive = true
+        checkButton.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        checkButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         checkButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        
+        view.addSubview(nextViewButton)
+        nextViewButton.topAnchor.constraint(equalTo: insertNumber.bottomAnchor, constant: 15).isActive = true
+        nextViewButton.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        nextViewButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        nextViewButton.rightAnchor.constraint(equalTo: checkButton.rightAnchor, constant: 80).isActive = true
         
        
         view.addSubview(roundLabel)

@@ -9,10 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
- 
-    var number1: Int = 0
-    var number2: Int = 0
-    
+    var number1 = Int.random(in: 1...50)
+    var number2 = Int.random(in: 1...50)
+  
     var result: Int = 0
     
     var round: Int = 0
@@ -105,11 +104,16 @@ class ViewController: UIViewController {
         
         setting()
         
+        randomNumbers()
+       
+       
+    }
+    
+    func randomNumbers() {
         number1 = Int.random(in: 1...50)
         number2 = Int.random(in: 1...50)
         
         self.exerciseLabel.text = String("\(number1) +  \(number2)")
-       
     }
     
     func  exersice(num1: Int, num2: Int) -> Int{
@@ -162,10 +166,7 @@ class ViewController: UIViewController {
                round += 0
            }
         
-        number1 = Int.random(in: 1...50)
-        number2 = Int.random(in: 1...50)
-        
-        self.exerciseLabel.text = String("\(number1) +  \(number2)")
+        self.randomNumbers()
        
         self.roundLabel.text = String(self.round)
         

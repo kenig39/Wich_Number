@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA22CDB32BB74B3C00EAB1C8 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22CDB22BB74B3C00EAB1C8 /* Game.swift */; };
+		FA22CDB52BB74E0C00EAB1C8 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22CDB42BB74E0C00EAB1C8 /* Extentions.swift */; };
 		FA61C7F92BB5FAB400404806 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61C7F82BB5FAB400404806 /* SecondViewController.swift */; };
 		FAAB58102BB0B8C2001C79D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB580F2BB0B8C2001C79D0 /* AppDelegate.swift */; };
 		FAAB58122BB0B8C2001C79D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB58112BB0B8C2001C79D0 /* SceneDelegate.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA22CDB22BB74B3C00EAB1C8 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		FA22CDB42BB74E0C00EAB1C8 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		FA61C7F82BB5FAB400404806 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		FAAB580C2BB0B8C2001C79D0 /* Whitch_Number.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whitch_Number.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAB580F2BB0B8C2001C79D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA22CDB12BB74B2000EAB1C8 /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				FA22CDB22BB74B3C00EAB1C8 /* Game.swift */,
+				FA22CDB42BB74E0C00EAB1C8 /* Extentions.swift */,
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
 		FAAB58032BB0B8C2001C79D0 = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +72,7 @@
 		FAAB580E2BB0B8C2001C79D0 /* Whitch_Number */ = {
 			isa = PBXGroup;
 			children = (
+				FA22CDB12BB74B2000EAB1C8 /* MVC */,
 				FAAB580F2BB0B8C2001C79D0 /* AppDelegate.swift */,
 				FAAB58112BB0B8C2001C79D0 /* SceneDelegate.swift */,
 				FAAB58132BB0B8C2001C79D0 /* ViewController.swift */,
@@ -142,6 +156,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA61C7F92BB5FAB400404806 /* SecondViewController.swift in Sources */,
+				FA22CDB32BB74B3C00EAB1C8 /* Game.swift in Sources */,
+				FA22CDB52BB74E0C00EAB1C8 /* Extentions.swift in Sources */,
 				FAAB58142BB0B8C2001C79D0 /* ViewController.swift in Sources */,
 				FAAB58102BB0B8C2001C79D0 /* AppDelegate.swift in Sources */,
 				FAAB58122BB0B8C2001C79D0 /* SceneDelegate.swift in Sources */,

@@ -27,7 +27,85 @@ class ViewController: UIViewController {
     let roundLabel = UILabel()
     let roundCount = UILabel()
     
+
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        checkButton.addTarget(self, action: #selector(checkNumbers), for: .touchUpInside)
+        
+        nextViewButton.addTarget(self, action: #selector(nextView), for: .touchUpInside)
+        
+        setupUI()
+        
+        setting()
+        
+        randomNumbers()
+       
+       
+    }
     
+    func randomNumbers() {
+        number1 = Int.random(in: 1...50)
+        number2 = Int.random(in: 1...50)
+        
+        self.exerciseLabel.text = String("\(number1) +  \(number2)")
+    }
+    
+    func  multiplay(num1: Int, num2: Int) -> Int{
+       result = num1 + num2
+        
+      return result
+    }
+    
+    @objc func nextView() {
+        let vc = SecondViewController()
+        vc.title = "Next view"
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
+   
+    @objc func checkNumbers() {
+        
+        guard let numberTextField = Int(self.insertNumber.text ?? "") else {
+            return
+        }
+        
+        if numberTextField == multiplay(num1: number1, num2: number2) {
+            
+            round += 1
+            points += 50
+            
+            
+        } else if numberTextField != multiplay(num1: number1, num2: number2) {
+            round += 0
+            points -= 50
+            
+        } else {
+            
+            points += 50
+        }
+            
+           if round == 5 {
+                let alert = UIAlertController(title: "Игра Окончена",
+                                              message: "Вы набрани \(self.points) очков ",
+                                              preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Начать заного",
+                                              style: .default))
+                self.present(alert, animated: true)
+                self.round = 1
+                self.points = 0
+           } else {
+               round += 0
+           }
+        
+        self.randomNumbers()
+       
+        self.roundLabel.text = String(self.round)
+        
+    }
     
     func setupUI() {
         insertNumber.placeholder = "Insert Ansver"
@@ -70,131 +148,45 @@ class ViewController: UIViewController {
         roundCount.textColor = UIColor.black
         roundCount.translatesAutoresizingMaskIntoConstraints = false
         
-        view.addSubviews([roundCount,roundLabel,resultNameLabel,exerciseNameLabel,exerciseLabel])
-    }
-
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        checkButton.addTarget(self, action: #selector(checkNumbers), for: .touchUpInside)
-        
-        nextViewButton.addTarget(self, action: #selector(nextView), for: .touchUpInside)
-        
-        setupUI()
-        
-        setting()
-        
-        randomNumbers()
-       
-       
-    }
-    
-    func randomNumbers() {
-        number1 = Int.random(in: 1...50)
-        number2 = Int.random(in: 1...50)
-        
-        self.exerciseLabel.text = String("\(number1) +  \(number2)")
-    }
-    
-    func  multiplay(num1: Int, num2: Int) -> Int{
-       result = num1 + num2
-        
-      return result
-    }
-    
-    @objc func nextView() {
-        let vc = SecondViewController()
-        vc.title = "Next view"
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
-    }
-    
-   
-    @objc func checkNumbers() {
-        
-        
-        guard let numberTextField = Int(self.insertNumber.text ?? "") else {
-            return
-        }
-        
-        if numberTextField == multiplay(num1: number1, num2: number2) {
-            
-            round += 1
-            points += 50
-            
-            
-        } else if numberTextField != multiplay(num1: number1, num2: number2) {
-            round += 0
-            points -= 50
-            
-        } else {
-            
-            points += 50
-        }
-            
-           if round == 5 {
-                let alert = UIAlertController(title: "Игра Окончена",
-                                              message: "Вы набрани \(self.points) очков ",
-                                              preferredStyle: .alert)
-                
-                alert.addAction(UIAlertAction(title: "Начать заного",
-                                              style: .default))
-                self.present(alert, animated: true)
-                self.round = 1
-                self.points = 0
-           } else {
-               round += 0
-           }
-        
-        self.randomNumbers()
-       
-        self.roundLabel.text = String(self.round)
-        
+        view.addSubviews([roundCount,roundLabel,resultNameLabel,exerciseNameLabel,exerciseLabel,nextViewButton, checkButton, insertNumber])
     }
     
     func setting() {
-        
-        view.addSubview(exerciseLabel)
+
         exerciseLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100).isActive = true
         exerciseLabel.heightAnchor.constraint(equalToConstant: 25).isActive = true
         exerciseLabel.widthAnchor.constraint(equalToConstant: 80).isActive = true
         exerciseLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        view.addSubview(exerciseNameLabel)
+        
         exerciseNameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100).isActive = true
         exerciseNameLabel.rightAnchor.constraint(equalTo: view.leftAnchor, constant: 110 ).isActive = true
         
         
-        
-        view.addSubview(insertNumber)
         insertNumber.topAnchor.constraint(equalTo: exerciseLabel.bottomAnchor, constant: 15).isActive = true
         insertNumber.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        view.addSubview(resultNameLabel)
+        
         resultNameLabel.topAnchor.constraint(equalTo: exerciseLabel.bottomAnchor, constant: 15).isActive = true
         resultNameLabel.rightAnchor.constraint(equalTo: view.leftAnchor, constant: 110 ).isActive = true
         
-        view.addSubview(checkButton)
+      
         checkButton.topAnchor.constraint(equalTo: insertNumber.bottomAnchor, constant: 15).isActive = true
         checkButton.widthAnchor.constraint(equalToConstant: 70).isActive = true
         checkButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         checkButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         
-        view.addSubview(nextViewButton)
         nextViewButton.topAnchor.constraint(equalTo: insertNumber.bottomAnchor, constant: 15).isActive = true
         nextViewButton.widthAnchor.constraint(equalToConstant: 70).isActive = true
         nextViewButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         nextViewButton.rightAnchor.constraint(equalTo: checkButton.rightAnchor, constant: 80).isActive = true
         
-       
-        view.addSubview(roundLabel)
+        
         roundLabel.topAnchor.constraint(equalTo: checkButton.bottomAnchor, constant: 20).isActive = true
         roundLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         
-        view.addSubview(roundCount)
         roundCount.topAnchor.constraint(equalTo: checkButton.bottomAnchor, constant: 20).isActive = true
         roundCount.rightAnchor.constraint(equalTo: view.leftAnchor, constant: 100).isActive = true
     }

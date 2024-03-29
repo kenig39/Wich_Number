@@ -9,8 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var number1 = Int.random(in: 1...50)
-    var number2 = Int.random(in: 1...50)
+    var number1 = Int()
+    var number2 = Int()
   
     var result: Int = 0
     
@@ -18,81 +18,60 @@ class ViewController: UIViewController {
     
     var points: Int = 0
     
-    let insertNumber: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Insert Ansver"
-        textField.translatesAutoresizingMaskIntoConstraints = false
-       return textField
-    }()
-    
-    let nextViewButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("NextVC", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .cyan
-        button.layer.cornerRadius = 5
-        button.layer.borderWidth = 2
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
-    let checkButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Check", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .yellow
-        button.layer.cornerRadius = 5
-        button.layer.borderWidth = 2
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
-    let exerciseLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "Text", size: 20)
-        label.textColor = UIColor.black
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    
-    let exerciseNameLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "Text", size: 20)
-        label.text = "Пример: "
-        label.textColor = UIColor.black
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    let insertNumber = UITextField()
+    let checkButton = UIButton()
+    let nextViewButton = UIButton()
+    let exerciseLabel = UILabel()
+    let exerciseNameLabel = UILabel()
+    let resultNameLabel =  UILabel()
+    let roundLabel = UILabel()
+    let roundCount = UILabel()
     
     
     
-    let resultNameLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "Text", size: 20)
-        label.text = "Результат: "
-        label.textColor = UIColor.black
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let roundLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "Text", size: 20)
-        label.textColor = UIColor.black
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let roundCount: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "Text", size: 20)
-        label.text = "Раунд: "
-        label.textColor = UIColor.black
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-
+    func setupUI() {
+        insertNumber.placeholder = "Insert Ansver"
+        insertNumber.translatesAutoresizingMaskIntoConstraints = false
+        
+        checkButton.setTitle("Check", for: .normal)
+        checkButton.setTitleColor(.black, for: .normal)
+        checkButton.backgroundColor = .yellow
+        checkButton.layer.cornerRadius = 5
+        checkButton.layer.borderWidth = 2
+        checkButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        nextViewButton.setTitle("NextVC", for: .normal)
+        nextViewButton.setTitleColor(.black, for: .normal)
+        nextViewButton.backgroundColor = .cyan
+        nextViewButton.layer.cornerRadius = 5
+        nextViewButton.layer.borderWidth = 2
+        nextViewButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        exerciseLabel.font = UIFont(name: "Text", size: 20)
+        exerciseLabel.textColor = UIColor.black
+        exerciseLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        exerciseNameLabel.font = UIFont(name: "Text", size: 20)
+        exerciseNameLabel.text = "Пример: "
+        exerciseNameLabel.textColor = UIColor.black
+        exerciseNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        resultNameLabel.font = UIFont(name: "Text", size: 20)
+        resultNameLabel.text = "Результат: "
+        resultNameLabel.textColor = UIColor.black
+        resultNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        roundLabel.font = UIFont(name: "Text", size: 20)
+        roundLabel.textColor = UIColor.black
+        roundLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        roundCount.font = UIFont(name: "Text", size: 20)
+        roundCount.text = "Раунд: "
+        roundCount.textColor = UIColor.black
+        roundCount.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubviews([roundCount,roundLabel,resultNameLabel,exerciseNameLabel,exerciseLabel])
+    }
 
 
     override func viewDidLoad() {
@@ -101,6 +80,8 @@ class ViewController: UIViewController {
         checkButton.addTarget(self, action: #selector(checkNumbers), for: .touchUpInside)
         
         nextViewButton.addTarget(self, action: #selector(nextView), for: .touchUpInside)
+        
+        setupUI()
         
         setting()
         
@@ -116,7 +97,7 @@ class ViewController: UIViewController {
         self.exerciseLabel.text = String("\(number1) +  \(number2)")
     }
     
-    func  exersice(num1: Int, num2: Int) -> Int{
+    func  multiplay(num1: Int, num2: Int) -> Int{
        result = num1 + num2
         
       return result
@@ -137,13 +118,13 @@ class ViewController: UIViewController {
             return
         }
         
-        if numberTextField == exersice(num1: number1, num2: number2) {
+        if numberTextField == multiplay(num1: number1, num2: number2) {
             
             round += 1
             points += 50
             
             
-        } else if numberTextField != exersice(num1: number1, num2: number2) {
+        } else if numberTextField != multiplay(num1: number1, num2: number2) {
             round += 0
             points -= 50
             

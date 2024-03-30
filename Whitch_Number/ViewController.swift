@@ -7,7 +7,33 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, GameProtocol {
+    
+    var score: Int = 0
+    
+    var isGameEnded: Bool
+    
+    func restartGame() {
+        round = 0
+        score = 0
+        startNewRound()
+    }
+    
+    func startNewRound() {
+        result = multiplay(num1: number1, num2: number2)
+        round += 1
+        
+    }
+    
+    init(score: Int, isGameEnded: Bool) {
+        self.score = score
+        self.isGameEnded = isGameEnded
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     var number1 = Int()
     var number2 = Int()

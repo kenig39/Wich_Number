@@ -17,11 +17,10 @@ protocol GameProtocol {
     
     var isGameEnded: Bool {get}
     
-    func restartGame()
-    
-    func startNewRound()
+    func gameOver()
     
     func multiplay(num1: Int, num2: Int) -> Int
     
     func randomNumbers()
 }
+

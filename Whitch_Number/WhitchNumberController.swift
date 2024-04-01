@@ -16,14 +16,8 @@ class ViewController: UIViewController, GameProtocol {
     func restartGame() {
         round = 0
         score = 0
-        startNewRound()
     }
     
-    func startNewRound() {
-        result = multiplay(num1: number1, num2: number2)
-        round += 1
-        
-    }
     
     init(score: Int, isGameEnded: Bool) {
         self.score = score
@@ -71,6 +65,18 @@ class ViewController: UIViewController, GameProtocol {
        
     }
     
+    func gameOver() {
+        let alert = UIAlertController(title: "Игра Окончена",
+                                      message: "Вы набрани \(self.points) очков ",
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Начать заного",
+                                      style: .default))
+        present(alert, animated: true)
+         round = 1
+         points = 0
+    }
+    
     func randomNumbers() {
         number1 = Int.random(in: 1...50)
         number2 = Int.random(in: 1...50)
@@ -80,9 +86,9 @@ class ViewController: UIViewController, GameProtocol {
     
     func  multiplay(num1: Int, num2: Int) -> Int{
        result = num1 + num2
-        
       return result
     }
+    
     
     @objc func nextView() {
         let vc = SecondViewController()
@@ -100,29 +106,19 @@ class ViewController: UIViewController, GameProtocol {
         
         if numberTextField == multiplay(num1: number1, num2: number2) {
             
-            round += 1
+            round += 0
             points += 50
             
             
         } else if numberTextField != multiplay(num1: number1, num2: number2) {
-            round += 0
+            round += 1
             points -= 50
             
         } else {
-            
             points += 50
         }
-            
            if round == 5 {
-                let alert = UIAlertController(title: "Игра Окончена",
-                                              message: "Вы набрани \(self.points) очков ",
-                                              preferredStyle: .alert)
-                
-                alert.addAction(UIAlertAction(title: "Начать заного",
-                                              style: .default))
-                self.present(alert, animated: true)
-                self.round = 1
-                self.points = 0
+               gameOver()
            } else {
                round += 0
            }

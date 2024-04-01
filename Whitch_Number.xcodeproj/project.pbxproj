@@ -7,25 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0EEFC52BBB092C00A7D568 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0EEFC42BBB092C00A7D568 /* StartViewController.swift */; };
 		FA22CDB32BB74B3C00EAB1C8 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22CDB22BB74B3C00EAB1C8 /* Game.swift */; };
 		FA22CDB52BB74E0C00EAB1C8 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22CDB42BB74E0C00EAB1C8 /* Extentions.swift */; };
-		FA61C7F92BB5FAB400404806 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61C7F82BB5FAB400404806 /* SecondViewController.swift */; };
+		FA61C7F92BB5FAB400404806 /* ChoseColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61C7F82BB5FAB400404806 /* ChoseColorViewController.swift */; };
 		FAAB58102BB0B8C2001C79D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB580F2BB0B8C2001C79D0 /* AppDelegate.swift */; };
 		FAAB58122BB0B8C2001C79D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB58112BB0B8C2001C79D0 /* SceneDelegate.swift */; };
-		FAAB58142BB0B8C2001C79D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB58132BB0B8C2001C79D0 /* ViewController.swift */; };
+		FAAB58142BB0B8C2001C79D0 /* WhitchNumberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB58132BB0B8C2001C79D0 /* WhitchNumberController.swift */; };
 		FAAB58172BB0B8C2001C79D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAB58152BB0B8C2001C79D0 /* Main.storyboard */; };
 		FAAB58192BB0B8C4001C79D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAAB58182BB0B8C4001C79D0 /* Assets.xcassets */; };
 		FAAB581C2BB0B8C4001C79D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAB581A2BB0B8C4001C79D0 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA0EEFC42BBB092C00A7D568 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		FA22CDB22BB74B3C00EAB1C8 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		FA22CDB42BB74E0C00EAB1C8 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
-		FA61C7F82BB5FAB400404806 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		FA61C7F82BB5FAB400404806 /* ChoseColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoseColorViewController.swift; sourceTree = "<group>"; };
 		FAAB580C2BB0B8C2001C79D0 /* Whitch_Number.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whitch_Number.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAB580F2BB0B8C2001C79D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAAB58112BB0B8C2001C79D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FAAB58132BB0B8C2001C79D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FAAB58132BB0B8C2001C79D0 /* WhitchNumberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhitchNumberController.swift; sourceTree = "<group>"; };
 		FAAB58162BB0B8C2001C79D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAAB58182BB0B8C4001C79D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAAB581B2BB0B8C4001C79D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -43,6 +45,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA0EEFC32BBB083A00A7D568 /* ChoseColorGame */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ChoseColorGame;
+			sourceTree = "<group>";
+		};
 		FA22CDB12BB74B2000EAB1C8 /* MVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -55,7 +64,15 @@
 		FAAB58032BB0B8C2001C79D0 = {
 			isa = PBXGroup;
 			children = (
-				FA61C7F82BB5FAB400404806 /* SecondViewController.swift */,
+				FAAB580F2BB0B8C2001C79D0 /* AppDelegate.swift */,
+				FAAB58112BB0B8C2001C79D0 /* SceneDelegate.swift */,
+				FA0EEFC42BBB092C00A7D568 /* StartViewController.swift */,
+				FAAB58152BB0B8C2001C79D0 /* Main.storyboard */,
+				FAAB58182BB0B8C4001C79D0 /* Assets.xcassets */,
+				FAAB581A2BB0B8C4001C79D0 /* LaunchScreen.storyboard */,
+				FAAB581D2BB0B8C4001C79D0 /* Info.plist */,
+				FA0EEFC32BBB083A00A7D568 /* ChoseColorGame */,
+				FA61C7F82BB5FAB400404806 /* ChoseColorViewController.swift */,
 				FAAB580E2BB0B8C2001C79D0 /* Whitch_Number */,
 				FAAB580D2BB0B8C2001C79D0 /* Products */,
 			);
@@ -72,14 +89,8 @@
 		FAAB580E2BB0B8C2001C79D0 /* Whitch_Number */ = {
 			isa = PBXGroup;
 			children = (
+				FAAB58132BB0B8C2001C79D0 /* WhitchNumberController.swift */,
 				FA22CDB12BB74B2000EAB1C8 /* MVC */,
-				FAAB580F2BB0B8C2001C79D0 /* AppDelegate.swift */,
-				FAAB58112BB0B8C2001C79D0 /* SceneDelegate.swift */,
-				FAAB58132BB0B8C2001C79D0 /* ViewController.swift */,
-				FAAB58152BB0B8C2001C79D0 /* Main.storyboard */,
-				FAAB58182BB0B8C4001C79D0 /* Assets.xcassets */,
-				FAAB581A2BB0B8C4001C79D0 /* LaunchScreen.storyboard */,
-				FAAB581D2BB0B8C4001C79D0 /* Info.plist */,
 			);
 			path = Whitch_Number;
 			sourceTree = "<group>";
@@ -155,10 +166,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA61C7F92BB5FAB400404806 /* SecondViewController.swift in Sources */,
+				FA61C7F92BB5FAB400404806 /* ChoseColorViewController.swift in Sources */,
+				FA0EEFC52BBB092C00A7D568 /* StartViewController.swift in Sources */,
 				FA22CDB32BB74B3C00EAB1C8 /* Game.swift in Sources */,
 				FA22CDB52BB74E0C00EAB1C8 /* Extentions.swift in Sources */,
-				FAAB58142BB0B8C2001C79D0 /* ViewController.swift in Sources */,
+				FAAB58142BB0B8C2001C79D0 /* WhitchNumberController.swift in Sources */,
 				FAAB58102BB0B8C2001C79D0 /* AppDelegate.swift in Sources */,
 				FAAB58122BB0B8C2001C79D0 /* SceneDelegate.swift in Sources */,
 			);
